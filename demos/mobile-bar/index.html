@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es" class="lang-es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Isla Bar Co. | De La Isla Studios</title>
+<meta name="description" content="Bartenders profesionales y coctelería de autor para bodas y eventos privados en Puerto Rico.">
+<meta name="theme-color" content="#1C1B19">
+
+<meta property="og:title" content="Isla Bar Co.">
+<meta property="og:description" content="Bartenders profesionales y coctelería de autor para bodas y eventos privados en Puerto Rico.">
+<meta property="og:type" content="profile">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1C1B19;
+    --air:#F7F3EC;
+    --brass:#9C7A45;
+    --brass-deep:#7C5F35;
+    --stone:#6B6259;
+    --stone-soft:#E3D9C8;
+    --line:rgba(28,27,25,.13);
+    --display:"Fraunces", Georgia, serif;
+    --body:"Manrope", system-ui, -apple-system, sans-serif;
+    --safe-bottom:env(safe-area-inset-bottom, 0px);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--air);color:var(--ink);
+    font-family:var(--body);font-weight:400;
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;}
+
+  html.lang-es .en{display:none !important;}
+  html.lang-en .es{display:none !important;}
+
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+  h1,h2{font-family:var(--display);font-weight:500;margin:0;line-height:1.12;}
+  p{margin:0 0 1em;}
+
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+
+  .wrap{max-width:600px;margin:0 auto;padding-inline:1.25rem;}
+
+  .eyebrow{
+    font-family:var(--body);font-weight:600;font-size:.72rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--brass-deep);
+  }
+
+  /* ---------- language toggle ---------- */
+  .hero-utility{display:flex;justify-content:flex-end;margin-bottom:1rem;}
+  .lang-toggle{
+    display:flex;gap:2px;background:var(--air);
+    border:1px solid var(--line);border-radius:999px;padding:3px;
+  }
+  .lang-toggle button{
+    border:0;background:transparent;color:var(--ink);
+    padding:8px 14px;font-size:11px;letter-spacing:.08em;font-weight:600;
+    border-radius:999px;cursor:pointer;
+  }
+  html.lang-es .lang-toggle #btn-es,
+  html.lang-en .lang-toggle #btn-en{background:var(--ink);color:var(--air);}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:.6em;
+    font-family:var(--body);font-weight:600;font-size:.95rem;
+    letter-spacing:.02em;padding:1.05em 1.4em;
+    border:1px solid var(--ink);background:var(--ink);color:var(--air);
+    cursor:pointer;width:100%;transition:transform .15s ease,background .25s ease,opacity .2s ease;
+  }
+  .btn:active{transform:scale(.98);}
+  .btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink);}
+
+  @media (hover:hover){
+    .btn:hover{background:var(--brass-deep);border-color:var(--brass-deep);}
+    .btn--ghost:hover{background:rgba(28,27,25,.05);border-color:var(--ink);}
+  }
+
+  .cta-stack{display:flex;flex-direction:column;gap:.65rem;}
+
+  /* =========================================================
+     HERO — brand block: wordmark, eyebrow, tagline, CTA
+     ========================================================= */
+  .hero{
+    background:var(--air);color:var(--ink);
+    text-align:center;
+    padding:2.4rem 1.25rem 2.6rem;
+  }
+
+  .wordmark{
+    font-family:var(--display);font-style:italic;font-weight:500;
+    font-size:2.6rem;letter-spacing:.01em;display:inline-block;
+  }
+  .hero-wave{display:block;margin:.9rem auto 1.1rem;}
+  .hero-eyebrow{display:block;margin-bottom:.9rem;}
+  .hero-tagline{
+    font-size:1rem;color:#3f3a33;
+    max-width:32ch;margin:0 auto 1.9rem;
+  }
+  .hero .cta-stack{max-width:420px;margin:0 auto;}
+  .demo-flag{
+    display:inline-block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--stone);border:1px solid var(--line);border-radius:999px;
+    padding:.35em 1em;margin-bottom:1.6rem;
+  }
+
+  /* =========================================================
+     SECTION SHELL
+     ========================================================= */
+  .section{padding-block:3.1rem;}
+  .section + .section{border-top:1px solid var(--line);}
+  .section-head{margin-bottom:1.5rem;}
+  .section-title{font-size:1.4rem;margin-top:.25rem;}
+  .section-sub{font-size:.9rem;color:var(--stone);margin:.5rem 0 0;}
+
+  /* =========================================================
+     QUICK ACTIONS — the core navigation hub
+     ========================================================= */
+  .qa-list{display:flex;flex-direction:column;}
+  .qa-item{
+    display:flex;align-items:center;gap:1rem;
+    padding:1.15rem .2rem;border-top:1px solid var(--line);
+    transition:background .15s ease;
+  }
+  .qa-item:first-child{border-top:none;}
+  .qa-item:active{background:rgba(28,27,25,.05);}
+  @media (hover:hover){
+    .qa-item:hover{background:rgba(28,27,25,.03);}
+  }
+  .qa-icon{
+    flex-shrink:0;width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    color:var(--brass-deep);
+  }
+  .qa-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.5;
+    stroke-linecap:round;stroke-linejoin:round;}
+  .qa-text{flex:1;min-width:0;}
+  .qa-title{font-family:var(--display);font-size:1.12rem;line-height:1.2;}
+  .qa-sub{font-size:.83rem;color:var(--stone);margin-top:.2rem;}
+  .qa-chevron{flex-shrink:0;color:var(--stone-soft);}
+  .qa-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;}
+
+  /* =========================================================
+     SERVICIOS — chip list
+     ========================================================= */
+  .chip-list{display:flex;flex-wrap:wrap;gap:.6rem;}
+  .chip{
+    border:1px solid var(--line);padding:.6em 1.15em;font-size:.85rem;
+    border-radius:999px;color:var(--ink);background:#fff;
+  }
+
+  /* =========================================================
+     PAQUETES — simple tier list
+     ========================================================= */
+  .tier-list{display:flex;flex-direction:column;}
+  .tier-item{padding:1.3rem .1rem;border-top:1px solid var(--line);}
+  .tier-item:first-child{border-top:none;padding-top:0;}
+  .tier-name{
+    font-family:var(--display);font-style:italic;font-weight:500;font-size:1.05rem;
+    color:var(--ink);margin-bottom:.35rem;
+  }
+  .tier-desc{font-size:.92rem;color:var(--stone);margin:0;}
+  .tier-note{font-size:.83rem;color:var(--stone);margin-top:1.4rem;}
+
+  /* =========================================================
+     FORM — availability request
+     ========================================================= */
+  .form-field{margin-bottom:1.25rem;}
+  .form-field label{
+    display:block;font-size:.72rem;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink);margin-bottom:.45rem;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea{
+    width:100%;padding:.85em 1em;border:1px solid var(--line);
+    background:#fff;font-family:var(--body);font-size:.95rem;
+    color:var(--ink);border-radius:3px;transition:border-color .15s ease;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus{border-color:var(--brass);}
+  .form-field textarea{resize:vertical;min-height:90px;}
+  .form-note{font-size:.79rem;color:var(--stone);margin-top:1rem;text-align:center;}
+  .form-status{
+    font-size:.85rem;color:var(--brass-deep);text-align:center;margin-top:.7rem;min-height:1.2em;
+  }
+
+  footer{text-align:center;padding:3rem 1.25rem calc(3rem + var(--safe-bottom));background:var(--ink);}
+  .footer-brand{
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(247,243,236,.85);margin:0 0 .6rem;
+  }
+  .footer-tagline{
+    font-family:var(--display);font-style:italic;font-size:1.02rem;
+    color:rgba(247,243,236,.62);margin:0 0 .9rem;
+  }
+  .footer-instagram{
+    display:block;font-family:var(--body);font-weight:400;
+    font-size:.76rem;letter-spacing:.03em;
+    color:rgba(247,243,236,.52);margin:0 0 .9rem;
+    text-decoration:none;
+  }
+  .footer-credit{
+    font-size:.64rem;letter-spacing:.06em;text-transform:none;
+    color:rgba(247,243,236,.34);margin:0;
+  }
+
+  /* =========================================================
+     STICKY BOTTOM BAR
+     ========================================================= */
+  .sticky-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:10;
+    background:rgba(28,27,25,.94);backdrop-filter:blur(10px);
+    padding:.7rem .9rem calc(.7rem + var(--safe-bottom));
+    transform:translateY(100%);transition:transform .3s ease;
+    display:flex;gap:.5rem;
+  }
+  .sticky-bar.visible{transform:translateY(0);}
+  .sticky-bar .btn{padding:.85em 1em;font-size:.82rem;background:var(--air);color:var(--ink);border-color:var(--air);}
+  .sticky-bar .btn--ghost{background:transparent;border-color:rgba(247,243,236,.4);color:var(--air);}
+  @media (hover:hover){
+    .sticky-bar .btn:hover{background:var(--brass);border-color:var(--brass);color:var(--air);}
+    .sticky-bar .btn--ghost:hover{background:rgba(247,243,236,.08);border-color:rgba(247,243,236,.6);}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto !important;transition:none !important;}
+  }
+
+  @media (min-width:640px){
+    .hero{padding-top:3rem;padding-bottom:3rem;}
+    .section{padding-block:3.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HERO — brand block. Wordmark, positioning, primary CTA.
+     ========================================================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-utility">
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button id="btn-es" aria-pressed="true">ES</button>
+        <button id="btn-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <span class="demo-flag">
+      <span class="es">Ejemplo de cliente</span><span class="en">Example client</span> · De La Isla Studios
+    </span>
+
+    <h1><span class="wordmark">Isla Bar Co.</span></h1>
+
+    <svg class="hero-wave" width="72" height="10" viewBox="0 0 120 12" aria-hidden="true">
+      <path d="M2 6c8-8 16 8 24 0s16-8 24 0 16 8 24 0 16-8 24 0" fill="none" stroke="#9C7A45" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    <p class="eyebrow hero-eyebrow">
+      <span class="es">Barra móvil y coctelería de autor · Puerto Rico</span><span class="en">Mobile Bar &amp; Craft Cocktails · Puerto Rico</span>
+    </p>
+
+    <p class="hero-tagline">
+      <span class="es">Bartenders profesionales y coctelería de autor para bodas y eventos privados.</span>
+      <span class="en">Professional bartenders and craft cocktails for weddings and private events.</span>
+    </p>
+
+    <div class="cta-stack">
+      <a class="btn" href="#cotizacion">
+        <span class="es">Solicitar disponibilidad</span><span class="en">Request availability</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- =========================================================
+     QUICK ACTIONS — the navigation hub
+     ========================================================= -->
+<section class="section" id="quick-actions">
+  <div class="wrap">
+    <h2 class="sr-only"><span class="es">Accesos rápidos</span><span class="en">Quick actions</span></h2>
+    <div class="qa-list">
+
+      <a class="qa-item wa-link" data-msg-es="Hola, vi la tarjeta digital de Isla Bar Co. y quisiera preguntar por disponibilidad para mi evento." data-msg-en="Hi, I saw the Isla Bar Co. digital card and wanted to ask about availability for my event."
+         href="#" target="_blank" rel="noopener">
+        <span class="qa-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </span>
+        <span class="qa-text">
+          <span class="qa-title">WhatsApp</span>
+          <span class="qa-sub"><span class="es">Habla con nosotros directamente</span><span class="en">Message us directly</span></span>
+        </span>
+        <span class="qa-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+      </a>
+
+      <a class="qa-item" href="./islabarco.vcf">
+        <span class="qa-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+        </span>
+        <span class="qa-text">
+          <span class="qa-title"><span class="es">Guardar contacto</span><span class="en">Save contact</span></span>
+          <span class="qa-sub"><span class="es">Guarda nuestro número a la mano</span><span class="en">Keep our number on hand</span></span>
+        </span>
+        <span class="qa-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+      </a>
+
+      <a class="qa-item" href="#servicios">
+        <span class="qa-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4h14l-7 9v7"/><path d="M9 20h6"/></svg>
+        </span>
+        <span class="qa-text">
+          <span class="qa-title"><span class="es">Servicios</span><span class="en">Services</span></span>
+          <span class="qa-sub"><span class="es">Bartenders, barra y coctelería de autor</span><span class="en">Bartenders, bar setup and craft cocktails</span></span>
+        </span>
+        <span class="qa-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+      </a>
+
+      <a class="qa-item" href="#paquetes">
+        <span class="qa-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </span>
+        <span class="qa-text">
+          <span class="qa-title"><span class="es">Paquetes</span><span class="en">Packages</span></span>
+          <span class="qa-sub"><span class="es">Opciones para cada celebración</span><span class="en">Options for every celebration</span></span>
+        </span>
+        <span class="qa-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+      </a>
+
+      <a class="qa-item" href="#cotizacion">
+        <span class="qa-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4V2h6v2"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+        </span>
+        <span class="qa-text">
+          <span class="qa-title"><span class="es">Solicitar disponibilidad</span><span class="en">Request availability</span></span>
+          <span class="qa-sub"><span class="es">Comparte los detalles de tu evento</span><span class="en">Share the details of your event</span></span>
+        </span>
+        <span class="qa-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICIOS — short preview, no long descriptions
+     ========================================================= -->
+<section class="section" id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span class="es">Servicios</span><span class="en">Services</span></p>
+      <h2 class="section-title"><span class="es">Una barra pensada al detalle</span><span class="en">A bar built around the details</span></h2>
+    </div>
+    <div class="chip-list">
+      <span class="chip"><span class="es">Bartenders profesionales</span><span class="en">Professional bartenders</span></span>
+      <span class="chip"><span class="es">Coctelería de autor</span><span class="en">Craft cocktails</span></span>
+      <span class="chip"><span class="es">Barra completa y cristalería</span><span class="en">Full bar and glassware</span></span>
+      <span class="chip"><span class="es">Montaje y limpieza incluidos</span><span class="en">Setup and cleanup included</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PAQUETES — short tier preview, no fixed pricing
+     ========================================================= -->
+<section class="section" id="paquetes">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span class="es">Paquetes</span><span class="en">Packages</span></p>
+      <h2 class="section-title"><span class="es">Opciones para cada celebración</span><span class="en">Options for every celebration</span></h2>
+    </div>
+    <div class="tier-list">
+      <div class="tier-item">
+        <p class="tier-name">Añejo</p>
+        <p class="tier-desc">
+          <span class="es">Un bartender y una barra completa — ideal para celebraciones más íntimas.</span>
+          <span class="en">One bartender and a complete bar — well suited to smaller, more intimate celebrations.</span>
+        </p>
+      </div>
+      <div class="tier-item">
+        <p class="tier-name">Reserva</p>
+        <p class="tier-desc">
+          <span class="es">Barra completa y un menú de cocteles diseñado alrededor de tu celebración.</span>
+          <span class="en">A full bar with a cocktail menu built around your celebration.</span>
+        </p>
+      </div>
+      <div class="tier-item">
+        <p class="tier-name">Gran Reserva</p>
+        <p class="tier-desc">
+          <span class="es">Múltiples estaciones, más equipo y servicio de barra durante todo el evento.</span>
+          <span class="en">Multiple stations, a larger team, and bar service that runs the length of the event.</span>
+        </p>
+      </div>
+    </div>
+    <p class="tier-note">
+      <span class="es">El precio final se confirma según la fecha, cantidad de invitados y tipo de celebración.</span>
+      <span class="en">Final pricing is confirmed based on date, guest count, and type of celebration.</span>
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     COTIZACIÓN / AVAILABILITY — core intake form
+     ========================================================= -->
+<section class="section" id="cotizacion">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><span class="es">Disponibilidad</span><span class="en">Availability</span></p>
+      <h2 class="section-title"><span class="es">Cuéntanos sobre tu evento</span><span class="en">Tell us about your event</span></h2>
+      <p class="section-sub">
+        <span class="es">Comparte los detalles y te contactamos con disponibilidad y opciones.</span>
+        <span class="en">Share a few details and we'll follow up with availability and options.</span>
+      </p>
+    </div>
+
+    <form id="quoteForm">
+      <div class="form-field">
+        <label for="f-nombre"><span class="es">Nombre</span><span class="en">Name</span></label>
+        <input type="text" id="f-nombre" name="nombre" data-ph-es="Tu nombre completo" data-ph-en="Your full name" required>
+      </div>
+
+      <div class="form-field">
+        <label for="f-fecha"><span class="es">Fecha del evento</span><span class="en">Event date</span></label>
+        <input type="date" id="f-fecha" name="fecha" required>
+      </div>
+
+      <div class="form-field">
+        <label for="f-lugar"><span class="es">Lugar del evento</span><span class="en">Event location</span></label>
+        <input type="text" id="f-lugar" name="lugar" data-ph-es="Ej. San Juan, PR" data-ph-en="E.g. San Juan, PR" required>
+      </div>
+
+      <div class="form-field">
+        <label for="f-hora"><span class="es">Hora del evento</span><span class="en">Event time</span></label>
+        <input type="time" id="f-hora" name="hora" required>
+      </div>
+
+      <div class="form-field">
+        <label for="f-invitados"><span class="es">Cantidad de invitados</span><span class="en">Guest count</span></label>
+        <input type="number" id="f-invitados" name="invitados" min="1" data-ph-es="Ej. 80" data-ph-en="E.g. 80" required>
+      </div>
+
+      <div class="form-field">
+        <label for="f-tipo"><span class="es">Tipo de actividad</span><span class="en">Type of event</span></label>
+        <select id="f-tipo" name="tipo" required>
+          <option value="" disabled selected></option>
+          <option value="boda"></option>
+          <option value="cumpleanos"></option>
+          <option value="corporativo"></option>
+          <option value="graduacion"></option>
+          <option value="babyshower"></option>
+          <option value="otro"></option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="f-comentarios"><span class="es">Comentarios adicionales</span><span class="en">Additional notes</span></label>
+        <textarea id="f-comentarios" name="comentarios" data-ph-es="Cuéntanos del lugar, el estilo de barra que imaginas, o cualquier detalle importante." data-ph-en="Tell us about the venue, the style of bar you're imagining, or anything else we should know."></textarea>
+      </div>
+
+      <div class="cta-stack">
+        <button type="submit" class="btn"><span class="es">Enviar solicitud</span><span class="en">Send request</span></button>
+      </div>
+
+      <p class="form-note">
+        <span class="es">Al enviar, abrimos WhatsApp con los detalles listos para que solo tengas que confirmar.</span>
+        <span class="en">Submitting opens WhatsApp with everything filled in, ready for you to confirm.</span>
+      </p>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer id="pageEnd">
+  <p class="footer-brand">Isla Bar Co. · Puerto Rico</p>
+  <p class="footer-tagline"><span class="es">Coctelería de autor para eventos privados</span><span class="en">Craft cocktails for private events</span></p>
+  <a class="footer-instagram" href="https://www.instagram.com/islabarco.pr/" target="_blank" rel="noopener">@islabarco.pr</a>
+  <p class="footer-credit"><span class="es">Demo creado por De La Isla Studios</span><span class="en">Demo built by De La Isla Studios</span></p>
+</footer>
+
+<!-- =========================================================
+     STICKY BOTTOM BAR
+     ========================================================= -->
+<div class="sticky-bar" id="stickyBar">
+  <a class="btn" style="flex:1.4;" href="#cotizacion">
+    <span class="es">Solicitar disponibilidad</span><span class="en">Request availability</span>
+  </a>
+  <a class="btn btn--ghost wa-link" style="flex:1;" data-msg-es="Hola, vi la tarjeta digital de Isla Bar Co. y quisiera preguntar por disponibilidad para mi evento." data-msg-en="Hi, I saw the Isla Bar Co. digital card and wanted to ask about availability for my event."
+     href="#" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+  var WA_NUMBER = "17870000000";
+
+  var ACTIVITY_LABELS = {
+    es: {
+      placeholder:"Selecciona una opción",
+      boda:"Boda",
+      cumpleanos:"Cumpleaños",
+      corporativo:"Corporativo",
+      graduacion:"Graduación",
+      babyshower:"Baby shower / Gender reveal",
+      otro:"Otro"
+    },
+    en: {
+      placeholder:"Select an option",
+      boda:"Wedding",
+      cumpleanos:"Birthday",
+      corporativo:"Corporate",
+      graduacion:"Graduation",
+      babyshower:"Baby shower / Gender reveal",
+      otro:"Other"
+    }
+  };
+
+  function currentLang(){
+    return document.documentElement.classList.contains("lang-en") ? "en" : "es";
+  }
+
+  // language toggle — mirrors the Altura card: .lang-es / .lang-en on <html>, no reload
+  (function(){
+    var root = document.documentElement;
+    var bEs = document.getElementById("btn-es");
+    var bEn = document.getElementById("btn-en");
+
+    function updateWhatsAppLinks(lang){
+      document.querySelectorAll(".wa-link").forEach(function(link){
+        var msg = lang === "en" ? link.getAttribute("data-msg-en") : link.getAttribute("data-msg-es");
+        link.setAttribute("href", "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg));
+      });
+    }
+
+    function updatePlaceholders(lang){
+      document.querySelectorAll("[data-ph-es]").forEach(function(field){
+        var ph = lang === "en" ? field.getAttribute("data-ph-en") : field.getAttribute("data-ph-es");
+        field.setAttribute("placeholder", ph);
+      });
+    }
+
+    function updateActivityOptions(lang){
+      var select = document.getElementById("f-tipo");
+      if(!select){ return; }
+      var labels = ACTIVITY_LABELS[lang];
+
+      Array.prototype.forEach.call(select.options, function(option){
+        if(option.value === ""){
+          option.text = labels.placeholder;
+        } else if(labels[option.value]){
+          option.text = labels[option.value];
+        }
+      });
+    }
+
+    function setLang(lang){
+      root.classList.remove("lang-es", "lang-en");
+      root.classList.add("lang-" + lang);
+      root.setAttribute("lang", lang);
+      bEs.setAttribute("aria-pressed", String(lang === "es"));
+      bEn.setAttribute("aria-pressed", String(lang === "en"));
+
+      try{
+        window.localStorage.setItem("islabar-card-lang", lang);
+      }catch(e){}
+
+      updateWhatsAppLinks(lang);
+      updatePlaceholders(lang);
+      updateActivityOptions(lang);
+    }
+
+    bEs.addEventListener("click", function(){ setLang("es"); });
+    bEn.addEventListener("click", function(){ setLang("en"); });
+
+    try{
+      var saved = window.localStorage.getItem("islabar-card-lang");
+      setLang(saved === "en" ? "en" : "es");
+    }catch(e){
+      setLang("es");
+    }
+  })();
+
+  // sticky bar: hidden while hero CTA / final footer are in view, visible otherwise
+  (function(){
+    var bar = document.getElementById("stickyBar");
+    var hero = document.querySelector(".hero");
+    var finalCta = document.getElementById("pageEnd");
+    if(!bar || !hero || !finalCta){ return; }
+
+    var heroVisible = true;
+    var finalVisible = false;
+
+    function update(){
+      bar.classList.toggle("visible", !heroVisible && !finalVisible);
+    }
+
+    var heroObserver = new IntersectionObserver(function(entries){
+      heroVisible = entries[0].isIntersecting;
+      update();
+    });
+    heroObserver.observe(hero);
+
+    var finalObserver = new IntersectionObserver(function(entries){
+      finalVisible = entries[0].isIntersecting;
+      update();
+    }, { rootMargin: "0px" });
+    finalObserver.observe(finalCta);
+  })();
+
+  // availability form: build a structured, language-aware WhatsApp message from the intake fields
+  (function(){
+    var form = document.getElementById("quoteForm");
+    var status = document.getElementById("formStatus");
+    if(!form){ return; }
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      var lang = currentLang();
+
+      var nombre = document.getElementById("f-nombre").value.trim();
+      var fecha = document.getElementById("f-fecha").value;
+      var lugar = document.getElementById("f-lugar").value.trim();
+      var hora = document.getElementById("f-hora").value;
+      var invitados = document.getElementById("f-invitados").value;
+      var tipoSelect = document.getElementById("f-tipo");
+      var tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
+      var comentarios = document.getElementById("f-comentarios").value.trim();
+
+      var lines;
+
+      if(lang === "en"){
+        lines = [
+          "Hi, I'd like to request availability for my event with Isla Bar Co.",
+          "",
+          "Name: " + nombre,
+          "Event date: " + fecha,
+          "Event location: " + lugar,
+          "Event time: " + hora,
+          "Guest count: " + invitados,
+          "Type of event: " + tipo
+        ];
+        if(comentarios){
+          lines.push("Additional notes: " + comentarios);
+        }
+      } else {
+        lines = [
+          "Hola, quisiera solicitar disponibilidad para mi evento con Isla Bar Co.",
+          "",
+          "Nombre: " + nombre,
+          "Fecha del evento: " + fecha,
+          "Lugar del evento: " + lugar,
+          "Hora del evento: " + hora,
+          "Cantidad de invitados: " + invitados,
+          "Tipo de actividad: " + tipo
+        ];
+        if(comentarios){
+          lines.push("Comentarios adicionales: " + comentarios);
+        }
+      }
+
+      var message = encodeURIComponent(lines.join("\n"));
+      var url = "https://wa.me/" + WA_NUMBER + "?text=" + message;
+
+      status.textContent = lang === "en"
+        ? "Great — opening WhatsApp with your event details."
+        : "Perfecto — abriendo WhatsApp con los detalles de tu evento.";
+
+      window.open(url, "_blank");
+    });
+  })();
+</script>
+
+</body>
+</html>
