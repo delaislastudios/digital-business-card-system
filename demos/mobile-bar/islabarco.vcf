@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Isla Bar Co.;;;
+FN:Isla Bar Co.
+ORG:Isla Bar Co.
+TITLE:Barra móvil para eventos privados
+TEL;TYPE=CELL:+17870000000
+EMAIL:hola@islabarco.demo
+ADR;TYPE=WORK:;;Puerto Rico;;;;
+URL:https://islabarco-demo.netlify.app
+NOTE:Barra móvil para eventos privados en Puerto Rico. Tarjeta digital demo — De La Isla Studios.
+END:VCARD
