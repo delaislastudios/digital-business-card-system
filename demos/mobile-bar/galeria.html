@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" class="lang-es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galería | Isla Bar Co.</title>
+<meta name="description" content="Fotos de nuestras barras y eventos en Puerto Rico.">
+<meta name="theme-color" content="#1C1B19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="page-header top-marker">
+  <a class="back-link" href="/index.html">
+    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    Isla Bar Co.
+  </a>
+  <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+    <button id="btn-es" aria-pressed="true">ES</button>
+    <button id="btn-en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-top">
+    <span class="demo-flag">
+      <span class="es">Proyecto Demo</span><span class="en">Demo Project</span> · De La Isla Studios
+    </span>
+    <p class="eyebrow"><span class="es">Galería</span><span class="en">Gallery</span></p>
+    <h1 class="section-title"><span class="es">Así se ve la barra en un evento</span><span class="en">A look at the bar in action</span></h1>
+  </div>
+
+  <div class="wrap page-body">
+    <!-- Local placeholder photography (Unsplash, free license), served from
+         assets/images/. Still stock photos, not real photography of the
+         business — the "Fotos ilustrativas" disclaimer below stays until
+         a real client's actual event photos replace these. -->
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="/assets/images/bar-setup.webp"
+             data-alt-es="Barra móvil montada para un evento" data-alt-en="Mobile bar set up for an event" alt="" loading="lazy">
+        <figcaption><span class="es">Barra montada</span><span class="en">Bar setup</span></figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="/assets/images/craft-cocktail.webp"
+             data-alt-es="Coctel de autor servido en copa" data-alt-en="Craft cocktail served in a glass" alt="" loading="lazy">
+        <figcaption><span class="es">Coctelería de autor</span><span class="en">Craft cocktails</span></figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="/assets/images/bartender-action.webp"
+             data-alt-es="Bartender preparando una bebida" data-alt-en="Bartender preparing a drink" alt="" loading="lazy">
+        <figcaption><span class="es">Bartender en acción</span><span class="en">Bartender at work</span></figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="/assets/images/bar-detail.webp"
+             data-alt-es="Detalle de copa de cristal en la barra" data-alt-en="Glassware detail at the bar" alt="" loading="lazy">
+        <figcaption><span class="es">Detalle de barra</span><span class="en">Bar detail</span></figcaption>
+      </figure>
+    </div>
+    <p class="gallery-note">
+      <span class="es">Imágenes de muestra utilizadas para fines de demostración.
+Las galerías finales incluyen fotografías reales de cada negocio.</span>
+      <span class="en">Sample imagery used for demonstration purposes.
+Final galleries feature each business's own work.</span>
+    </p>
+  </div>
+</main>
+
+<footer id="pageEnd">
+  <p class="footer-brand">Isla Bar Co. · Puerto Rico</p>
+  <p class="footer-tagline"><span class="es">Coctelería de autor para eventos privados</span><span class="en">Craft cocktails for private events</span></p>
+  <a class="footer-instagram" href="https://www.instagram.com/islabarco.pr/" target="_blank" rel="noopener">@islabarco.pr</a>
+  <p class="footer-credit"><span class="es">Demo creado por De La Isla Studios</span><span class="en">Demo built by De La Isla Studios</span></p>
+</footer>
+
+<div class="sticky-bar" id="stickyBar">
+  <a class="btn" style="flex:1.4;" href="/cotizacion.html">
+    <span class="es">Solicitar disponibilidad</span><span class="en">Request availability</span>
+  </a>
+  <a class="btn btn--ghost wa-link" style="flex:1;" data-msg-es="Hola, vi la tarjeta digital de Isla Bar Co. y quisiera preguntar por disponibilidad para mi evento." data-msg-en="Hi, I saw the Isla Bar Co. digital card and wanted to ask about availability for my event."
+     href="#" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

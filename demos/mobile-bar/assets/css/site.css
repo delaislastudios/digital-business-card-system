@@ -1,0 +1,311 @@
+/* =========================================================
+   Isla Bar Co. — shared design tokens + components
+   Used by every page. Change once, applies everywhere.
+   ========================================================= */
+
+:root{
+  --ink:#2A1D1A;
+  --air:#F5EDE6;
+  --brick:#7A3630;
+  --brick-deep:#4F211D;
+  --olive:#5C5A3E;
+  --olive-deep:#3F3E2A;
+  --stone:#8C7A6E;
+  --stone-soft:#DDD1C1;
+  --line:rgba(42,29,26,.13);
+  --display:"Fraunces", Georgia, serif;
+  --body:"Manrope", system-ui, -apple-system, sans-serif;
+  --safe-bottom:env(safe-area-inset-bottom, 0px);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--air);color:var(--ink);
+  font-family:var(--body);font-weight:400;
+  line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  display:flex;flex-direction:column;min-height:100vh;
+}
+main{flex:1;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+
+html.lang-es .en{display:none !important;}
+html.lang-en .es{display:none !important;}
+
+:focus-visible{outline:2px solid var(--brick);outline-offset:3px;}
+
+h1,h2{font-family:var(--display);font-weight:500;margin:0;line-height:1.12;}
+p{margin:0 0 1em;}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+.wrap{max-width:600px;margin:0 auto;padding-inline:1.25rem;}
+
+.eyebrow{
+  font-family:var(--body);font-weight:600;font-size:.72rem;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--brick);
+}
+
+/* ---------- language toggle ---------- */
+.hero-utility{display:flex;justify-content:flex-end;margin-bottom:1rem;}
+.lang-toggle{
+  display:flex;gap:2px;background:var(--air);
+  border:1px solid var(--line);border-radius:999px;padding:3px;
+}
+.lang-toggle button{
+  border:0;background:transparent;color:var(--ink);
+  padding:6px 12px;font-size:11px;letter-spacing:.08em;font-weight:600;
+  border-radius:999px;cursor:pointer;
+}
+html.lang-es .lang-toggle #btn-es,
+html.lang-en .lang-toggle #btn-en{background:var(--ink);color:var(--air);}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:.6em;
+  font-family:var(--body);font-weight:600;font-size:.95rem;
+  letter-spacing:.02em;padding:1.05em 1.4em;
+  border:1px solid var(--ink);background:var(--ink);color:var(--air);
+  cursor:pointer;width:100%;transition:transform .15s ease,background .25s ease,opacity .2s ease;
+}
+.btn:active{transform:scale(.98);}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink);}
+
+@media (hover:hover){
+  .btn:hover{background:var(--brick-deep);border-color:var(--brick-deep);}
+  .btn--ghost:hover{background:rgba(42,29,26,.05);border-color:var(--ink);}
+}
+
+.cta-stack{display:flex;flex-direction:column;gap:.65rem;}
+
+/* =========================================================
+   HERO — index.html only: logo, eyebrow, tagline, CTA
+   ========================================================= */
+.hero{
+  background:var(--air);color:var(--ink);
+  text-align:center;
+  padding:2.4rem 1.25rem 1.2rem;
+}
+.hero-logo{
+  display:block;margin:0 auto 1.3rem;
+  width:100%;max-width:280px;height:auto;
+}
+.hero-eyebrow{display:block;margin-bottom:.9rem;}
+.hero-tagline{
+  font-size:1rem;color:#3f3a33;
+  max-width:32ch;margin:0 auto 1.9rem;
+}
+.hero .cta-stack{max-width:420px;margin:0 auto;}
+.demo-flag{
+  display:inline-block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--stone);border:1px solid var(--line);border-radius:999px;
+  padding:.35em 1em;margin-bottom:1.6rem;
+}
+
+/* =========================================================
+   SUB-PAGE HEADER + INTRO — servicios/galeria/paquetes/cotizacion
+   ========================================================= */
+.page-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.3rem 1.25rem 0;
+}
+.back-link{
+  display:inline-flex;align-items:center;gap:.35em;
+  font-family:var(--display);font-style:italic;font-size:.98rem;color:var(--ink);
+}
+.back-link svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;}
+
+.page-top{padding-top:1.8rem;text-align:center;}
+.page-top .demo-flag{margin-bottom:1.3rem;}
+.page-top .section-sub{max-width:36ch;margin-inline:auto;}
+
+.page-body{padding-top:2rem;padding-bottom:3.4rem;}
+
+/* =========================================================
+   SECTION SHELL — index.html quick actions only
+   ========================================================= */
+.section{padding-block:3.1rem;}
+.section + .section{border-top:1px solid var(--line);}
+#quick-actions{padding-top:1.3rem;}
+.section-title{font-size:1.4rem;margin-top:.25rem;}
+.section-sub{font-size:.9rem;color:var(--stone);margin:.5rem 0 0;}
+
+/* =========================================================
+   QUICK ACTIONS — the navigation hub (index.html)
+   ========================================================= */
+.qa-list{display:flex;flex-direction:column;}
+.qa-item{
+  display:flex;align-items:center;gap:1rem;
+  padding:1.15rem .2rem;border-top:1px solid var(--line);
+  transition:background .15s ease;
+}
+.qa-item:first-child{border-top:none;}
+.qa-item:active{background:rgba(42,29,26,.05);}
+@media (hover:hover){
+  .qa-item:hover{background:rgba(42,29,26,.03);}
+}
+.qa-icon{
+  flex-shrink:0;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  color:var(--olive);
+}
+.qa-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;}
+.qa-text{flex:1;min-width:0;}
+.qa-title{font-family:var(--display);font-size:1.12rem;line-height:1.2;}
+.qa-sub{font-size:.83rem;color:var(--stone);margin-top:.2rem;}
+.qa-chevron{flex-shrink:0;color:var(--stone-soft);}
+.qa-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;}
+
+/* =========================================================
+   SERVICIOS — chip list
+   ========================================================= */
+.service-note{
+  font-size:.92rem;color:var(--stone);
+  margin-top:1.3rem;max-width:52ch;
+}
+
+
+/* =========================================================
+   GALERÍA — compact photo grid
+   ========================================================= */
+.gallery-grid{display:grid;grid-template-columns:1fr;gap:.6rem;}
+@media (min-width:480px){
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+}
+.gallery-item{
+  position:relative;aspect-ratio:1/1;overflow:hidden;
+  border:1px solid var(--line);background:var(--stone-soft);
+}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.gallery-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:.6em .75em;
+  background:linear-gradient(to top, rgba(42,29,26,.75), rgba(42,29,26,0));
+  color:var(--air);font-size:.72rem;letter-spacing:.03em;
+}
+.gallery-note{font-size:.79rem;color:var(--stone);margin-top:1.1rem;text-align:center;}
+
+/* =========================================================
+   PAQUETES — simple tier list
+   ========================================================= */
+.tier-list{display:flex;flex-direction:column;}
+.tier-item{padding:1.3rem .1rem;border-top:1px solid var(--line);}
+.tier-item:first-child{border-top:none;padding-top:0;}
+.tier-name{
+  font-family:var(--display);font-style:italic;font-weight:500;font-size:1.05rem;
+  color:var(--olive);margin-bottom:.35rem;
+}
+.tier-desc{font-size:.92rem;color:var(--stone);margin:0;}
+.tier-note{font-size:.83rem;color:var(--stone);margin-top:1.4rem;}
+
+/* =========================================================
+   FORM — availability request
+   ========================================================= */
+.form-field{margin-bottom:1.25rem;}
+.form-field label{
+  display:block;font-size:.72rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);margin-bottom:.45rem;
+}
+.form-field input,
+.form-field select,
+.form-field textarea{
+  width:100%;padding:.85em 1em;border:1px solid var(--line);
+  background:#fff;font-family:var(--body);font-size:.95rem;
+  color:var(--ink);border-radius:3px;transition:border-color .15s ease;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{border-color:var(--brick);}
+.form-field textarea{resize:vertical;min-height:90px;}
+
+/* custom select arrow, replacing the default OS dropdown chevron */
+.form-field select{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%237A3630' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 1em center;
+  background-size:13px 13px;
+  padding-right:2.6em;
+  cursor:pointer;
+}
+
+/* remove native up/down spinner on the guest-count number field */
+.form-field input[type="number"]::-webkit-outer-spin-button,
+.form-field input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+.form-field input[type="number"]{
+  -moz-appearance:textfield;
+}
+
+/* soften the native date/time picker icon so it doesn't look like a raw OS control */
+.form-field input[type="date"]::-webkit-calendar-picker-indicator,
+.form-field input[type="time"]::-webkit-calendar-picker-indicator{
+  opacity:.6;
+  cursor:pointer;
+}
+.form-note{font-size:.79rem;color:var(--stone);margin-top:1rem;text-align:center;}
+.form-status{
+  font-size:.85rem;color:var(--brick);text-align:center;margin-top:.7rem;min-height:1.2em;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{text-align:center;padding:3rem 1.25rem calc(3rem + var(--safe-bottom));background:var(--ink);}
+.footer-brand{
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(245,237,230,.85);margin:0 0 .6rem;
+}
+.footer-tagline{
+  font-family:var(--display);font-style:italic;font-size:1.02rem;
+  color:rgba(245,237,230,.62);margin:0 0 .9rem;
+}
+.footer-instagram{
+  display:block;font-family:var(--body);font-weight:400;
+  font-size:.76rem;letter-spacing:.03em;
+  color:rgba(245,237,230,.52);margin:0 0 .9rem;
+  text-decoration:none;
+}
+.footer-credit{
+  font-size:.64rem;letter-spacing:.06em;text-transform:none;
+  color:rgba(245,237,230,.34);margin:0;
+}
+
+/* =========================================================
+   STICKY BOTTOM BAR
+   ========================================================= */
+.sticky-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:10;
+  background:rgba(42,29,26,.94);backdrop-filter:blur(10px);
+  padding:.7rem .9rem calc(.7rem + var(--safe-bottom));
+  transform:translateY(100%);transition:transform .3s ease;
+  display:flex;gap:.5rem;
+}
+.sticky-bar.visible{transform:translateY(0);}
+.sticky-bar .btn{padding:.85em 1em;font-size:.82rem;background:var(--air);color:var(--ink);border-color:var(--air);}
+.sticky-bar .btn--ghost{background:transparent;border-color:rgba(245,237,230,.4);color:var(--air);}
+@media (hover:hover){
+  .sticky-bar .btn:hover{background:var(--brick);border-color:var(--brick);color:var(--air);}
+  .sticky-bar .btn--ghost:hover{background:rgba(245,237,230,.08);border-color:rgba(245,237,230,.6);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto !important;transition:none !important;}
+}
+
+@media (min-width:640px){
+  .hero{padding-top:3rem;padding-bottom:1.6rem;}
+  .section{padding-block:3.6rem;}
+  #quick-actions{padding-top:1.8rem;}
+  .page-body{padding-top:2.6rem;}
+}
