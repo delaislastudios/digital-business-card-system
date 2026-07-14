@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" class="lang-es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cuéntanos sobre tu evento | Lirio Events</title>
+<meta name="description" content="Comparte los detalles de tu boda o evento para recibir orientación sobre el nivel de apoyo que mejor se ajuste a tus necesidades.">
+<meta name="theme-color" content="#FBF1E9">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="page-header top-marker">
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    Lirio Events
+  </a>
+  <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+    <button id="btn-es" aria-pressed="true">ES</button>
+    <button id="btn-en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-top">
+    <span class="demo-flag">
+      <span class="es">Proyecto Demo</span><span class="en">Demo Project</span> · De La Isla Studios
+    </span>
+    <p class="eyebrow"><span class="es">Comencemos</span><span class="en">Let’s begin</span></p>
+    <h1 class="section-title"><span class="es">Cuéntanos sobre tu evento y lo que ya tienes encaminado</span><span class="en">Tell us about your event and what you already have in place</span></h1>
+    <p class="section-sub">
+      <span class="es">Comparte los detalles principales, qué ya tienes listo y qué aún necesitas resolver. Con esa información podremos orientarte hacia el apoyo que mejor se ajuste a tu evento.</span>
+      <span class="en">Share the main details, what is already in place, and what still needs to be resolved. From there, we can guide you toward the support that best fits your event.</span>
+    </p>
+  </div>
+
+  <div class="wrap page-body">
+    <form id="quoteForm">
+      <section class="form-section" aria-labelledby="contact-section">
+        <h2 class="form-section-title" id="contact-section"><span class="es">Contacto</span><span class="en">Contact</span></h2>
+        <div class="form-field">
+          <label for="f-name"><span class="es">Nombre completo</span><span class="en">Full name</span></label>
+          <input type="text" id="f-name" name="name" data-ph-es="Tu nombre completo" data-ph-en="Your full name" required>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="event-section">
+        <h2 class="form-section-title" id="event-section"><span class="es">Sobre tu evento</span><span class="en">About your event</span></h2>
+        <div class="form-field">
+          <label for="f-date"><span class="es">Fecha del evento</span><span class="en">Event date</span></label>
+          <input type="date" id="f-date" name="date" required>
+        </div>
+        <div class="form-field">
+          <label for="f-event-type"><span class="es">Tipo de evento</span><span class="en">Event type</span></label>
+          <select id="f-event-type" name="event_type" required>
+            <option value="" disabled selected data-label-es="Selecciona una opción" data-label-en="Select an option">Selecciona una opción</option>
+            <option value="wedding" data-label-es="Boda" data-label-en="Wedding">Boda</option>
+            <option value="corporate" data-label-es="Evento corporativo" data-label-en="Corporate event">Evento corporativo</option>
+            <option value="private" data-label-es="Cumpleaños o celebración privada" data-label-en="Birthday or private celebration">Cumpleaños o celebración privada</option>
+            <option value="baby-shower" data-label-es="Baby shower" data-label-en="Baby shower">Baby shower</option>
+            <option value="other" data-label-es="Otro" data-label-en="Other">Otro</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-region"><span class="es">¿En qué región será el evento?</span><span class="en">What region will the event take place in?</span></label>
+          <select id="f-region" name="region" required>
+            <option value="" disabled selected data-label-es="Selecciona una región" data-label-en="Select a region">Selecciona una región</option>
+            <option value="metro" data-label-es="Área Metro" data-label-en="Metro Area">Área Metro</option>
+            <option value="north" data-label-es="Norte" data-label-en="North">Norte</option>
+            <option value="south" data-label-es="Sur" data-label-en="South">Sur</option>
+            <option value="east" data-label-es="Este" data-label-en="East">Este</option>
+            <option value="west" data-label-es="Oeste" data-label-en="West">Oeste</option>
+            <option value="central" data-label-es="Centro" data-label-en="Central">Centro</option>
+            <option value="vieques-culebra" data-label-es="Vieques / Culebra" data-label-en="Vieques / Culebra">Vieques / Culebra</option>
+            <option value="unknown" data-label-es="Aún no lo sabemos" data-label-en="We do not know yet">Aún no lo sabemos</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-venue"><span class="es">Nombre del lugar, hacienda o venue</span><span class="en">Venue or location name</span></label>
+          <input type="text" id="f-venue" name="venue" data-ph-es="Opcional si aún no lo sabes" data-ph-en="Optional if you do not know yet">
+        </div>
+        <div class="form-field">
+          <label for="f-guests"><span class="es">Cantidad estimada de invitados</span><span class="en">Estimated guest count</span></label>
+          <input type="number" id="f-guests" name="guests" min="1" data-ph-es="Ej. 120" data-ph-en="E.g. 120" required>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="stage-section">
+        <h2 class="form-section-title" id="stage-section"><span class="es">Dónde están en el proceso</span><span class="en">Where you are in the process</span></h2>
+        <div class="form-field">
+          <label for="f-stage"><span class="es">¿Cómo describirías la etapa en la que están ahora?</span><span class="en">How would you describe where you are in the planning process?</span></label>
+          <select id="f-stage" name="stage" required>
+            <option value="" disabled selected data-label-es="Selecciona una opción" data-label-en="Select an option">Selecciona una opción</option>
+            <option value="starting" data-label-es="Apenas estamos comenzando" data-label-en="We are just getting started">Apenas estamos comenzando</option>
+            <option value="date-venue" data-label-es="Ya tenemos fecha y lugar" data-label-en="We have a date and venue">Ya tenemos fecha y lugar</option>
+            <option value="some-vendors" data-label-es="Tenemos algunos proveedores contratados" data-label-en="We have some vendors booked">Tenemos algunos proveedores contratados</option>
+            <option value="most-vendors" data-label-es="Tenemos la mayoría de los proveedores" data-label-en="We have most vendors booked">Tenemos la mayoría de los proveedores</option>
+            <option value="day-of" data-label-es="Solo necesitamos coordinación del día" data-label-en="We only need day-of coordination">Solo necesitamos coordinación del día</option>
+            <option value="not-sure" data-label-es="No estamos seguros" data-label-en="We are not sure">No estamos seguros</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="vendors-section">
+        <h2 class="form-section-title" id="vendors-section"><span class="es">Proveedores y próximos pasos</span><span class="en">Vendors and next steps</span></h2>
+
+        <fieldset class="checkbox-group" data-exclusive-group>
+          <legend><span class="es">¿Qué proveedores ya tienen contratados?</span><span class="en">Which vendors have you already booked?</span></legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="none" data-exclusive="true" data-label-es="Ninguno todavía" data-label-en="None yet"> <span><span class="es">Ninguno todavía</span><span class="en">None yet</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="venue" data-label-es="Lugar" data-label-en="Venue"> <span><span class="es">Lugar</span><span class="en">Venue</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="photographer" data-label-es="Fotógrafo" data-label-en="Photographer"> <span><span class="es">Fotógrafo</span><span class="en">Photographer</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="videographer" data-label-es="Videógrafo" data-label-en="Videographer"> <span><span class="es">Videógrafo</span><span class="en">Videographer</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="catering" data-label-es="Catering" data-label-en="Catering"> <span>Catering</span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="decor" data-label-es="Decoración" data-label-en="Decor"> <span><span class="es">Decoración</span><span class="en">Decor</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="music" data-label-es="DJ / música" data-label-en="DJ / Music"> <span><span class="es">DJ / música</span><span class="en">DJ / Music</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="officiant" data-label-es="Oficiante" data-label-en="Officiant"> <span><span class="es">Oficiante</span><span class="en">Officiant</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="cake" data-label-es="Bizcocho / postres" data-label-en="Cake / Desserts"> <span><span class="es">Bizcocho / postres</span><span class="en">Cake / Desserts</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="hair-makeup" data-label-es="Peinado y maquillaje" data-label-en="Hair &amp; Makeup"> <span><span class="es">Peinado y maquillaje</span><span class="en">Hair &amp; Makeup</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="transportation" data-label-es="Transportación" data-label-en="Transportation"> <span><span class="es">Transportación</span><span class="en">Transportation</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="coordinator" data-label-es="Coordinador(a) / Wedding Planner" data-label-en="Coordinator / Wedding Planner"> <span><span class="es">Coordinador(a) / Wedding Planner</span><span class="en">Coordinator / Wedding Planner</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="other" data-label-es="Otro" data-label-en="Other"> <span><span class="es">Otro</span><span class="en">Other</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_booked" value="not-sure" data-exclusive="true" data-label-es="No estamos seguros" data-label-en="Not sure yet"> <span><span class="es">No estamos seguros</span><span class="en">Not sure yet</span></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="checkbox-group" data-exclusive-group>
+          <legend><span class="es">¿Qué proveedores todavía necesitan?</span><span class="en">Which vendors do you still need?</span></legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="none" data-exclusive="true" data-label-es="Ninguno todavía" data-label-en="None yet"> <span><span class="es">Ninguno todavía</span><span class="en">None yet</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="venue" data-label-es="Lugar" data-label-en="Venue"> <span><span class="es">Lugar</span><span class="en">Venue</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="photographer" data-label-es="Fotógrafo" data-label-en="Photographer"> <span><span class="es">Fotógrafo</span><span class="en">Photographer</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="videographer" data-label-es="Videógrafo" data-label-en="Videographer"> <span><span class="es">Videógrafo</span><span class="en">Videographer</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="catering" data-label-es="Catering" data-label-en="Catering"> <span>Catering</span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="decor" data-label-es="Decoración" data-label-en="Decor"> <span><span class="es">Decoración</span><span class="en">Decor</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="music" data-label-es="DJ / música" data-label-en="DJ / Music"> <span><span class="es">DJ / música</span><span class="en">DJ / Music</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="officiant" data-label-es="Oficiante" data-label-en="Officiant"> <span><span class="es">Oficiante</span><span class="en">Officiant</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="cake" data-label-es="Bizcocho / postres" data-label-en="Cake / Desserts"> <span><span class="es">Bizcocho / postres</span><span class="en">Cake / Desserts</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="hair-makeup" data-label-es="Peinado y maquillaje" data-label-en="Hair &amp; Makeup"> <span><span class="es">Peinado y maquillaje</span><span class="en">Hair &amp; Makeup</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="transportation" data-label-es="Transportación" data-label-en="Transportation"> <span><span class="es">Transportación</span><span class="en">Transportation</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="coordinator" data-label-es="Coordinador(a) / Wedding Planner" data-label-en="Coordinator / Wedding Planner"> <span><span class="es">Coordinador(a) / Wedding Planner</span><span class="en">Coordinator / Wedding Planner</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="other" data-label-es="Otro" data-label-en="Other"> <span><span class="es">Otro</span><span class="en">Other</span></span></label>
+            <label class="choice"><input type="checkbox" name="vendors_needed" value="not-sure" data-exclusive="true" data-label-es="No estamos seguros" data-label-en="Not sure yet"> <span><span class="es">No estamos seguros</span><span class="en">Not sure yet</span></span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="form-section" aria-labelledby="locations-section">
+        <h2 class="form-section-title" id="locations-section"><span class="es">Ceremonia y recepción</span><span class="en">Ceremony and reception</span></h2>
+        <fieldset class="radio-group">
+          <legend><span class="es">¿La ceremonia y la recepción serán en el mismo lugar?</span><span class="en">Will the ceremony and reception be at the same location?</span></legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="same_location" value="yes" data-label-es="Sí" data-label-en="Yes"> <span><span class="es">Sí</span><span class="en">Yes</span></span></label>
+            <label class="choice"><input type="radio" name="same_location" value="no" data-label-es="No" data-label-en="No"> <span>No</span></label>
+            <label class="choice"><input type="radio" name="same_location" value="na" data-label-es="No aplica" data-label-en="Not applicable"> <span><span class="es">No aplica</span><span class="en">Not applicable</span></span></label>
+          </div>
+        </fieldset>
+        <div class="form-field conditional-field" id="ceremonyField" hidden>
+          <label for="f-ceremony-location"><span class="es">Lugar de la ceremonia</span><span class="en">Ceremony location</span></label>
+          <input type="text" id="f-ceremony-location" name="ceremony_location" data-ph-es="Nombre o municipio" data-ph-en="Name or municipality">
+        </div>
+        <div class="form-field conditional-field" id="receptionField" hidden>
+          <label for="f-reception-location"><span class="es">Lugar de la recepción</span><span class="en">Reception location</span></label>
+          <input type="text" id="f-reception-location" name="reception_location" data-ph-es="Nombre o municipio" data-ph-en="Name or municipality">
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="support-section">
+        <h2 class="form-section-title" id="support-section"><span class="es">Cómo podemos acompañarte</span><span class="en">How we can support you</span></h2>
+        <div class="form-field">
+          <label for="f-support"><span class="es">¿Qué tipo de apoyo entienden que necesitan?</span><span class="en">What kind of support do you feel you need?</span></label>
+          <select id="f-support" name="support" required>
+            <option value="" disabled selected data-label-es="Selecciona una opción" data-label-en="Select an option">Selecciona una opción</option>
+            <option value="day-of" data-label-es="Coordinación del día" data-label-en="Day-of coordination">Coordinación del día</option>
+            <option value="partial" data-label-es="Coordinación parcial" data-label-en="Partial coordination">Coordinación parcial</option>
+            <option value="full" data-label-es="Planificación completa" data-label-en="Full planning">Planificación completa</option>
+            <option value="consultation" data-label-es="Consulta inicial" data-label-en="Initial consultation">Consulta inicial</option>
+            <option value="not-sure" data-label-es="No estamos seguros" data-label-en="Not sure">No estamos seguros</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-challenges"><span class="es">¿Qué falta por resolver o qué les preocupa más?</span><span class="en">What still needs to be solved, or what are you most concerned about?</span></label>
+          <textarea id="f-challenges" name="challenges" data-ph-es="Ej. timeline, proveedores pendientes, transportación, montaje..." data-ph-en="E.g. timeline, pending vendors, transportation, setup..."></textarea>
+        </div>
+        <div class="form-field">
+          <label for="f-contact"><span class="es">Método de contacto preferido</span><span class="en">Preferred contact method</span></label>
+          <select id="f-contact" name="contact" required>
+            <option value="" disabled selected data-label-es="Selecciona una opción" data-label-en="Select an option">Selecciona una opción</option>
+            <option value="whatsapp" data-label-es="WhatsApp" data-label-en="WhatsApp">WhatsApp</option>
+            <option value="phone" data-label-es="Llamada" data-label-en="Phone call">Llamada</option>
+            <option value="email" data-label-es="Email" data-label-en="Email">Email</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-notes"><span class="es">Algo más que debamos saber</span><span class="en">Anything else we should know</span></label>
+          <textarea id="f-notes" name="notes" data-ph-es="Comparte cualquier detalle que nos ayude a entender mejor tu evento." data-ph-en="Share anything that would help us better understand your event."></textarea>
+        </div>
+      </section>
+
+      <div class="cta-stack">
+        <button type="submit" class="btn"><span class="es">Compartir detalles por WhatsApp</span><span class="en">Share details via WhatsApp</span></button>
+      </div>
+
+      <p class="form-note">
+        <span class="es">Al continuar, abriremos WhatsApp con un resumen de tus respuestas para que puedas revisarlo antes de enviarlo.</span>
+        <span class="en">When you continue, WhatsApp will open with a summary of your answers so you can review it before sending.</span>
+      </p>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</main>
+
+<footer id="pageEnd">
+  <p class="footer-brand">Lirio Events · Puerto Rico</p>
+  <p class="footer-tagline"><span class="es">Cada detalle en su lugar. Tú, presente en el momento.</span><span class="en">Every detail in place. You, fully present in the moment.</span></p>
+  <a class="footer-instagram" href="https://www.instagram.com/lirioevents.demo/" target="_blank" rel="noopener">@lirioevents.demo</a>
+  <p class="footer-credit"><span class="es">Demo creado por De La Isla Studios</span><span class="en">Demo built by De La Isla Studios</span></p>
+</footer>
+
+<div class="sticky-bar" id="stickyBar">
+  <a class="btn btn--ghost wa-link" style="flex:1;" data-msg-es="Hola, vi la tarjeta de Lirio Events y me gustaría conversar sobre la planificación o coordinación de mi evento." data-msg-en="Hi, I saw Lirio Events’ card and would like to talk about planning or coordinating my event."
+     href="https://wa.me/17870000001?text=Hola%2C%20vi%20la%20tarjeta%20de%20Lirio%20Events%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20la%20planificaci%C3%B3n%20o%20coordinaci%C3%B3n%20de%20mi%20evento." target="_blank" rel="noopener">
+    <span class="es">Quiero conversar por WhatsApp</span><span class="en">I’d like to chat on WhatsApp</span>
+  </a>
+</div>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
